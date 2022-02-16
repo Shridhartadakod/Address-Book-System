@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
+using System.Text.RegularExpressions;
 using System.Threading.Tasks;
 
 namespace AddressBookSystem
@@ -57,6 +58,10 @@ namespace AddressBookSystem
             return input;
         }
 
+        internal string GetName()
+        {
+            throw new NotImplementedException();
+        }
 
         private static string GetNumber(string message)
         {
