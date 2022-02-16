@@ -14,6 +14,7 @@ namespace AddressBookSystem
             AddressBook myContacts = new AddressBook();
             myContacts.CreateContact();
             myContacts.Display();
+            MenuList.List();
 
             Console.ReadKey();
         }
