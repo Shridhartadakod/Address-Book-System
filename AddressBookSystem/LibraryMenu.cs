@@ -37,15 +37,21 @@ namespace AddressBookSystem
                     case 4:
                         Console.WriteLine("Exiting Application...");
                         break;
+                    case 5:
+                        mylibrary.SearchAndFilter();
+                        break;
+                    case 6:
+                        Console.WriteLine("Exiting Application...");
+                        break;
                     default:
                         Console.WriteLine("Invalid Option!!!");
                         break;
                 }
-                if (option == 4)
+                if (option == 6)
                     break;
                 Console.WriteLine("Press any key to Continue...");
                 Console.ReadKey();
-            } while (option != 4);
+            } while (option != 6);
         }
     }
 }

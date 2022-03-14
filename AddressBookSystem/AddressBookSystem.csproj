@@ -44,7 +44,10 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="AddressBook.cs" />
+    <Compile Include="AddressBookLibrary.cs" />
+    <Compile Include="AddressBookMenu.cs" />
     <Compile Include="Contact.cs" />
+    <Compile Include="LibraryMenu.cs" />
     <Compile Include="MenuList.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />

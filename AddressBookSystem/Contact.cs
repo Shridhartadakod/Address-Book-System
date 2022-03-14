@@ -18,6 +18,22 @@ namespace AddressBookSystem
         private string zip;
         private string address;
 
+
+        public string FullName
+        {
+            get
+            {
+                if (String.IsNullOrEmpty(lastName) is true && String.IsNullOrEmpty(firstName) is true)
+                    return null;
+                if (String.IsNullOrEmpty(lastName) is true)
+                    return firstName;
+                return firstName + " " + lastName;
+            }
+        }
+        public string City { get { return city; } }
+        public string State { get { return state; } }
+
+
         public Contact()
         {
             GetContactInfo();
@@ -116,6 +132,15 @@ namespace AddressBookSystem
             Console.WriteLine("State: " + state);
             Console.WriteLine("Zip: " + zip);
             Console.WriteLine("Address: " + address);
+        }
+
+        public override bool Equals(object obj)
+        {
+            if (obj is not Contact)
+                return false;
+            else if (FullName == ((Contact)obj).FullName)
+                return true;
+            return false;
         }
     }
 }

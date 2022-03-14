@@ -43,12 +43,24 @@ namespace AddressBookSystem
                     default:
                         Console.WriteLine("Invalid Option!!!");
                         break;
+                    case 6:
+                        addressBook.Display();
+                        break;
+                    case 7:
+                        addressBook.DisplayFilteredList();
+                        break;
+                    case 8:
+                        Console.WriteLine("Exiting to library...");
+                        break;
+                    default:
+                        Console.WriteLine("Invalid Option!!!");
+                        break;
                 }
-                if (option == 5)
+                if (option == 8)
                     break;
                 Console.WriteLine("Press any key to Continue...");
                 Console.ReadKey();
-            } while (option != 5);
+            } while (option != 8);
         }
     }
 }
