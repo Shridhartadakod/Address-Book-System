@@ -165,6 +165,44 @@ namespace AddressBookSystem
                 if (enumerator.Current.Value.State == state)
                     filteredList.Add(enumerator.Current.Value);
         }
+
+        public void DisplayCountByLocation()
+        {
+            var cityWiseCount = GetCityWiseCount();
+            var stateWiseCount = GetStateWiseCount();
+
+            Console.WriteLine("\nCity wise count: ");
+            foreach (var city in cityWiseCount)
+                Console.WriteLine($"City: {city.Key}, No of contacts: {city.Value}");
+
+            Console.WriteLine("\nState wise count: ");
+            foreach (var state in stateWiseCount)
+                Console.WriteLine($"State: {state.Key}, No of contacts: {state.Value}");
+        }
+
+        /// <summary>
+        /// Gets the city wise count of contacts.
+        /// </summary>
+        public Dictionary<string, int> GetCityWiseCount()
+        {
+            Dictionary<string, int> counts = new Dictionary<string, int>();
+            var cityList = addresses.Values.Select(x => { return x.City; }).Distinct().ToList();
+            foreach (var city in cityList)
+                counts.Add(city, addresses.Values.Count(contact => contact.City == city));
+            return counts;
+        }
+
+        /// <summary>
+        /// Gets the state wise count of contacts.
+        /// </summary>
+        public Dictionary<string, int> GetStateWiseCount()
+        {
+            Dictionary<string, int> counts = new Dictionary<string, int>();
+            var stateList = addresses.Values.Select(x => { return x.State; }).Distinct().ToList();
+            foreach (var state in stateList)
+                counts.Add(state, addresses.Values.Count(contact => contact.State == state));
+            return counts;
+        }
     }
     
 }

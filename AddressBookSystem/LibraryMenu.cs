@@ -21,7 +21,10 @@ namespace AddressBookSystem
                 Console.WriteLine("2. Open an AddressBook");
                 Console.WriteLine("3. Display all Address Books in library");
                 Console.WriteLine("4. Exit");
-                option = Userinput.GetPositiveInt("Enter option(1-4): ");
+                Console.WriteLine("5. Search and filter by location");
+                Console.WriteLine("6. Get City wise count");
+                Console.WriteLine("7. Exit");
+                option = Userinput.GetPositiveInt("Enter option(1-7): ");
                 Console.Clear();
                 switch (option)
                 {
@@ -43,15 +46,19 @@ namespace AddressBookSystem
                     case 6:
                         Console.WriteLine("Exiting Application...");
                         break;
+                   
+                    case 7:
+                        Console.WriteLine("Exiting Application...");
+                        break;
                     default:
                         Console.WriteLine("Invalid Option!!!");
                         break;
                 }
-                if (option == 6)
+                if (option == 7)
                     break;
                 Console.WriteLine("Press any key to Continue...");
                 Console.ReadKey();
-            } while (option != 6);
+            } while (option != 7);
         }
     }
 }

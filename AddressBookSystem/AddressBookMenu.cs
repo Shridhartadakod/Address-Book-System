@@ -40,9 +40,7 @@ namespace AddressBookSystem
                     case 5:
                         Console.WriteLine("Exiting to library...");
                         break;
-                    default:
-                        Console.WriteLine("Invalid Option!!!");
-                        break;
+                    
                     case 6:
                         addressBook.Display();
                         break;
@@ -52,15 +50,18 @@ namespace AddressBookSystem
                     case 8:
                         Console.WriteLine("Exiting to library...");
                         break;
+                    case 9:
+                        Console.WriteLine("Exiting to library...");
+                        break;
                     default:
                         Console.WriteLine("Invalid Option!!!");
                         break;
                 }
-                if (option == 8)
+                if (option == 9)
                     break;
                 Console.WriteLine("Press any key to Continue...");
                 Console.ReadKey();
-            } while (option != 8);
+            } while (option != 9);
         }
     }
 }
